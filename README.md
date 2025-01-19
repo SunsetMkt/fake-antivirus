@@ -1,3 +1,6 @@
+# Modification
+Fake antivirus processes. Because some anti cheat engines will also try to detect sandboxes.
+
 # Fake Sandbox Processes (FSP)
 ![latest version](https://img.shields.io/github/release/NuclearPhoenixx/fake-sandbox.svg?style=for-the-badge) ![issues](https://img.shields.io/github/issues/NuclearPhoenixx/fake-sandbox.svg?style=for-the-badge) ![open pr](https://img.shields.io/github/issues-pr-raw/NuclearPhoenixx/fake-sandbox.svg?style=for-the-badge)
 

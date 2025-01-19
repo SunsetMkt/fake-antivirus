@@ -9,7 +9,7 @@
 $action = read-host " What do you want to do? (start/stop)"
 
 # Your processes come here:
-$fakeProcesses = @('WinDbg.exe','idaq.exe','wireshark.exe','vmacthlp.exe','VBoxService.exe','VBoxTray.exe','procmon.exe','ollydbg.exe','vmware-tray.exe','idag.exe','ImmunityDebugger.exe')
+$fakeProcesses = @("bdoesrv.exe", "kavpf.exe", "mantispm.exe", "avengine.exe", "fspex.exe", "mcshld9x.exe", "mgavrtcl.exe", "avguard.exe", "SavService.exe", "coreServiceShell.exe", "avgrsx.exe", "avgwdsvc.exe", "avgtray.exe", "avpgui.exe", "kavfs.exe", "kavfsrcn.exe", "kavtray.exe", "360rp.exe", "PccNTMon.exe", "avp.exe", "mcshield.exe", "ashServ.exe", "avgemc.exe", "navapsvc.exe", "avgagent.exe", "f-agnt95.exe", "f-prot.exe", "kav.exe", "nod32krn.exe", "ccSvcHst.exe", "SemSvc.exe", "mctray.exe", "MASVC.exe", "bdagent.exe", "avgcsrvx.exe", "fssm32.exe", "AvastSvc.exe", "vsserv.exe", "SysInspector.exe", "ekrn.exe", "ossec-agent.exe", "osqueryd.exe")
 
 # If you type in "start" it will run this:
 if ($action -ceq "start") {
@@ -32,26 +32,26 @@ if ($action -ceq "start") {
     }
 
     Set-Location $oldpwd
-	write-host ""
-	write-host "Press any key to close..."
-	cmd /c pause | out-null
+    write-host ""
+    write-host "Press any key to close..."
+    cmd /c pause | out-null
 }
 # If you type in "stop" it will run this:
 elseif ($action -ceq "stop") {
     write-host ""
-	foreach ($proc in $fakeProcesses) {
+    foreach ($proc in $fakeProcesses) {
         Stop-Process -processname "$proc".Split(".")[0]
         write-host "[+] Killed $proc"
     }
-	write-host ""
-	write-host "Press any key to close..."
-	cmd /c pause | out-null
+    write-host ""
+    write-host "Press any key to close..."
+    cmd /c pause | out-null
 }
 # Else print this:
 else {
-	write-host ""
+    write-host ""
     write-host "Bad usage: You need to use either 'start' or 'stop' for this to work!" -foregroundcolor Red
-	write-host "Press any key to close..."
-	cmd /c pause | out-null
+    write-host "Press any key to close..."
+    cmd /c pause | out-null
 
 }
